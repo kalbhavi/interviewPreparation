@@ -5,3 +5,7 @@ https://github.com/haoel/leetcode/tree/master/algorithms/cpp
 
 LinkedList Explanation From Stanford
 http://cslibrary.stanford.edu/105/LinkedListProblems.pdf
+
+Find the intersecting point of two linked lists
+http://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/
+
