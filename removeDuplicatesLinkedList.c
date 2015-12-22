@@ -55,3 +55,24 @@ Thanks to bearwang for suggesting this method.
 
 Time Complexity: O(n) on average (assuming that hash table access time is O(1) on average).
 */
+
+
+/*
+ Write code to remove duplicates from a sorted linked list. 
+ */
+ // Remove duplicates from a sorted list
+void RemoveDuplicates(struct node* head) {
+    //(figured these with a few drawings)
+    ￼struct node* current = head;
+    if (current == NULL) return;     // do nothing if the list is empty
+    // Compare current node with next node
+    while(current->next!=NULL) {
+        if (current->data == current->next->data) {
+            struct node* nextNext = current->next->next;
+            free(current->next);
+            current->next = nextNext;
+        } else {
+            current = current->next;// only advance if no deletion
+        }
+    }
+}
