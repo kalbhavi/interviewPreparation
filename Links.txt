@@ -2,3 +2,6 @@
 
 List of programs that are listed in the leetcode.com
 https://github.com/haoel/leetcode/tree/master/algorithms/cpp
+
+LinkedList Explanation From Stanford
+http://cslibrary.stanford.edu/105/LinkedListProblems.pdf
