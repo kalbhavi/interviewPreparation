@@ -76,3 +76,27 @@ void RemoveDuplicates(struct node* head) {
         }
     }
 }
+
+/* Below function will removes the duplicate characters from a sorted array of characters */
+/* Function to remove duplicates in a sorted array */
+char *removeDupsSorted(char *str)
+{
+    int resultIndex = 1, inputIndex = 1;
+ 
+    /* In place removal of duplicate characters*/
+    while (*(str + inputIndex))
+    {
+        if (*(str + inputIndex) != *(str + inputIndex - 1))
+        {
+            *(str + resultIndex) = *(str + inputIndex);
+            resultIndex++;
+        }
+        inputIndex++;
+    }
+ 
+    /* After above step string is stringiittg.
+       Removing extra iittg after string*/
+    *(str + resultIndex) = '\0';
+ 
+    return str;
+}
