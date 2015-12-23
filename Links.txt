@@ -9,3 +9,7 @@ http://cslibrary.stanford.edu/105/LinkedListProblems.pdf
 Find the intersecting point of two linked lists
 http://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-two-linked-lists/
 
+Some thesis on merging algorithms
+http://www.dcs.kcl.ac.uk/technical-reports/papers/TR-04-05.pdf
+
+
