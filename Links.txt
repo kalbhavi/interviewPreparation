@@ -15,7 +15,6 @@ http://www.geeksforgeeks.org/write-a-function-to-get-the-intersection-point-of-t
 Some thesis on merging algorithms
 http://www.dcs.kcl.ac.uk/technical-reports/papers/TR-04-05.pdf
 
-
 Bit Reversal Question On StackOverflow
 http://stackoverflow.com/questions/746171/best-algorithm-for-bit-reversal-from-msb-lsb-to-lsb-msb-in-c
 
