@@ -39,38 +39,38 @@ static NODE* __bst_new_node(int data, NODE* left, NODE* right)
 /* A utility function to insert a created new node with given data in BST */
 void binary_search_tree_insert(NODE** root, int value)
 {
-	__bst_insert(root, value);
+    __bst_insert(root, value);
 }
 
 static void __bst_insert(NODE** node, int data)
 {
-	if(*node == NULL) {
-		*node = __bst_new_node(data, NULL, NULL);	
-	} else {
-		if(data == (*node)->data) {
-			return;
-		}
-		else if(data <= (*node)->data) {
-			__bst_insert( &((*node)->left), data);
-		} else {
-			__bst_insert( &((*node)->right), data);
-		}			
-	}
+    if(*node == NULL) {
+        *node = __bst_new_node(data, NULL, NULL);	
+    } else {
+        if(data == (*node)->data) {
+            return;
+        }
+        else if(data <= (*node)->data) {
+            __bst_insert( &((*node)->left), data);
+        } else {
+            __bst_insert( &((*node)->right), data);
+        }			
+    }
 }
 
 /* Utility function Computes the number of nodes in a tree */
 size_t binary_search_tree_size(NODE * root)
 {
-	return __bst_size(root);
+    return __bst_size(root);
 }
 
 static size_t __bst_size(NODE* node)
 {
-	if(node == NULL) {
-		return 0;
-	} else {
-		return (__bst_size(node->left) + 1 + __bst_size(node->right));
-	}
+    if(node == NULL) {
+        return 0;
+    } else {
+        return (__bst_size(node->left) + 1 + __bst_size(node->right));
+    }
 }
 
 
@@ -79,7 +79,7 @@ static size_t __bst_size(NODE* node)
     down to the farthest leaf node.*/
 size_t binary_search_tree_height(NODE * root)
 {
-	return __bst_height(root);
+    return __bst_height(root);
 }
 
 static size_t __bst_height(NODE * node)
@@ -88,14 +88,15 @@ static size_t __bst_height(NODE * node)
         return 0;
     else
     {
-        /* compute the height of each subtree */
-        size_t lheight = __bst_height(node->left);
-        size_t rheight = __bst_height(node->right);
- 
-        /* use the larger one */
-        if (lheight > rheight)
-            return(size_t)(lheight+1);
-        else return(size_t)(rheight+1);
+    /* compute the height of each subtree */
+    size_t lheight = __bst_height(node->left);
+    size_t rheight = __bst_height(node->right);
+
+    /* use the larger one */
+    if (lheight > rheight)
+        return(size_t)(lheight+1);
+    else 
+        return(size_t)(rheight+1);
     }
 }
 
@@ -104,42 +105,42 @@ static size_t __bst_height(NODE * node)
     during traversal. It may be simple print function */
 void binary_search_tree_traverse_in_order(NODE * node, traversal_cb cb)
 {	
-	if(node == NULL) {
-		return;
-	}
+    if(node == NULL) {
+        return;
+    }
     /* Visit left node fist, then to root and right */
-	binary_search_tree_traverse_in_order(node->left, cb);
-	cb(node->data);
-	binary_search_tree_traverse_in_order(node->right, cb);
+    binary_search_tree_traverse_in_order(node->left, cb);
+    cb(node->data);
+    binary_search_tree_traverse_in_order(node->right, cb);
 }
 
 void binary_search_tree_traverse_preorder(NODE * node, traversal_cb cb)
 {	
-	if(node == NULL) {
-		return;
-	}
+    if(node == NULL) {
+        return;
+    }
     /* Visit root node fist, then to left and right */
     cb(node->data);
-	binary_search_tree_traverse_preorder(node->left, cb);
-	binary_search_tree_traverse_preorder(node->right, cb);
+    binary_search_tree_traverse_preorder(node->left, cb);
+    binary_search_tree_traverse_preorder(node->right, cb);
 }
 
 void binary_search_tree_traverse_postorder(NODE * node, traversal_cb cb)
 {	
-	if(node == NULL) {
-		return;
-	}
+    if(node == NULL) {
+        return;
+    }
     /* Visit left node fist, then to right and lastly root node */
-	binary_search_tree_traverse_postorder(node->left, cb);
-	binary_search_tree_traverse_postorder(node->right, cb);
+    binary_search_tree_traverse_postorder(node->left, cb);
+    binary_search_tree_traverse_postorder(node->right, cb);
     cb(node->data);
 }
 
 void binary_search_tree_levle_order_traverse(NODE * node, traversal_cb cb)
 {
-	if(node == NULL) {
-		return;
-	}
+    if(node == NULL) {
+        return;
+    }
     size_t treeHeight = __bst_height(node);
     int level = 1;
     /* Visit nodes at each level */
@@ -149,9 +150,9 @@ void binary_search_tree_levle_order_traverse(NODE * node, traversal_cb cb)
 
 static void __bst_traverse_given_level(NODE * node, size_t level, traversal_cb cb)
 {
-	if(node == NULL) {
-		return;
-	}
+    if(node == NULL) {
+        return;
+    }
     /* Visit left node and right node at each level */
     if (level == 1)
         cb(node->data);
@@ -164,34 +165,34 @@ static void __bst_traverse_given_level(NODE * node, size_t level, traversal_cb c
 /* Utility function to delete or free a given node in the BST */
 void binary_search_tree_free(NODE** node)
 {
-	__bst_free(node);
+    __bst_free(node);
 }
 
 static void __bst_free(NODE** node)
 {
-	if(*node == NULL) {
-		return;
-	}
-	__bst_free(&((*node)->left));
-	__bst_free(&((*node)->right));
-	
-	free(*node);
-	*node = NULL;
+    if(*node == NULL) {
+        return;
+    }
+    __bst_free(&((*node)->left));
+    __bst_free(&((*node)->right));
+
+    free(*node);
+    *node = NULL;
 }
 
 /* Utility function to find the minimum value stored in a given BST */
 int bst_min_value(NODE * root)
 {
-	return __bst_min_value(root);
+    return __bst_min_value(root);
 }
 
 static int __bst_min_value(NODE * root)
 {
-	NODE* node = root->left;
-	while(node->left != NULL) {
-		node = node->left;
-	}
-	return node->data;
+    NODE* node = root->left;
+    while(node->left != NULL) {
+        node = node->left;
+    }
+    return node->data;
 }
 
 
@@ -218,24 +219,24 @@ void binary_search_tree_search(NODE * root, int value, int** out)
  (efficient version). */
 int isbinary_search_tree(NODE* node) 
 { 
-  return(__isbinary_search_tree_util(node, INT_MIN, INT_MAX)); 
+    return(__isbinary_search_tree_util(node, INT_MIN, INT_MAX)); 
 } 
  
 /* Returns true if the given tree is a BST and its 
    values are >= min and <= max. */
 static int __isbinary_search_tree_util(NODE * node, int min, int max) 
 { 
- 
-  /* An empty tree is a valid BST */
-  if (node == NULL) 
-     return TRUE;
-       
-  /* Return FALSE if this node violates the min/max constraint */ 
-  if (node->data < min || node->data > max) 
-     return FALSE; 
-    
-  /* otherwise check the subtrees recursively, tightening the min or max constraint */
-  return (
+
+    /* An empty tree is a valid BST */
+    if (node == NULL) 
+        return TRUE;
+
+    /* Return FALSE if this node violates the min/max constraint */ 
+    if (node->data < min || node->data > max) 
+        return FALSE; 
+
+    /* otherwise check the subtrees recursively, tightening the min or max constraint */
+    return (
     __isbinary_search_tree_util(node->left, min, node->data-1) &&  // Allow only distinct values
     __isbinary_search_tree_util(node->right, node->data+1, max) );  // Allow only distinct values
 } 
