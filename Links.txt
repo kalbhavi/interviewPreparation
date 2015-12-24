@@ -21,3 +21,5 @@ http://stackoverflow.com/questions/746171/best-algorithm-for-bit-reversal-from-m
 Big O Notation CheatSheet
 http://bigocheatsheet.com
 
+Bit Twiddling Hacks
+https://graphics.stanford.edu/~seander/bithacks.html
