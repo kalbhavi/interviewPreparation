@@ -54,22 +54,22 @@ void computeLPSArray(char *patternArray, int patternLen, int *lpsArray)
 
 int kmp_matcher(char *inputTextArray, int textLen, char *patternArray, int patternLen, int *lpsArray)
 {
-    int i = 0, j = 0;  // index for inputTextArray[] and patternArray[]
+    int textIndex = 0, patIndex = 0;  // index for inputTextArray[] and patternArray[]
  
-	while(i < textLen){
-		if(inputTextArray[i] == patternArray[j])
+	while(textIndex < textLen){
+		if(inputTextArray[textIndex] == patternArray[patIndex])
         {           
-			if(j == (patternLen - 1))
-				return (i - j); // means, in (i-j)th position, there is a match occur
+			if(patIndex == (patternLen - 1))
+				return (textIndex - patIndex); // means, in (textIndex-patIndex)th position, there is a match occur
 			else{
-				i++;
-				j++;
+				textIndex++;
+				patIndex++;
 			}
 		}
-        else if( j > 0 ){
-			j = lpsArray[j-1];
+        else if( patIndex > 0 ){
+			patIndex = lpsArray[patIndex-1];
 		}else{
-			i++;
+			textIndex++;
 		}
 	}
 	return -1; // No match found
