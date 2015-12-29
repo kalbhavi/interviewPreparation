@@ -23,3 +23,26 @@ http://bigocheatsheet.com
 
 Bit Twiddling Hacks
 https://graphics.stanford.edu/~seander/bithacks.html
+
+Use of volatile keyword in C
+http://priyaranjan-technicalzone.blogspot.com/2014/02/c-language-volatile-keyword.html
+
+Very good explanation on coding standards related to security
+https://www.securecoding.cert.org/confluence/display/c/SEI+CERT+C+Coding+Standard
+
+Example on using variable number of arguments in C
+http://publications.gbdirect.co.uk/c_book/chapter9/stdarg.html
+
+
+Linux:
+
+Differnece between vmalloc and kmalloc
+http://priyaranjan-technicalzone.blogspot.com/2014/02/linux-kernel-kmalloc-and-vmalloc.html
+
+Writing own spinlock function
+https://jfdube.wordpress.com/2014/01/03/implementing-a-recursive-read-write-spinlock/
+
+Short note on memory barriers
+http://bruceblinn.com/linuxinfo/MemoryBarriers.html
+http://lwn.net/Articles/174655/
+
