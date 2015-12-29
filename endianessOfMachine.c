@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ENDIANESS_DEBUG 1
+#undef ENDIANESS_DEBUG
 
 #define TRUE    1
 #define FALSE   0
