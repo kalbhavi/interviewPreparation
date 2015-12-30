@@ -33,6 +33,12 @@ https://www.securecoding.cert.org/confluence/display/c/SEI+CERT+C+Coding+Standar
 Example on using variable number of arguments in C
 http://publications.gbdirect.co.uk/c_book/chapter9/stdarg.html
 
+Memory layout of a C programs
+http://www.geeksforgeeks.org/memory-layout-of-c-program/
+
+Data Structure alignment and padding
+https://en.wikipedia.org/wiki/Data_structure_alignment
+
 
 Linux:
 
