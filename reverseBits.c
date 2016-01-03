@@ -21,3 +21,12 @@ for (v >>= 1; v; v >>= 1)
   s--;
 }
 r <<= s; // shift when v's highest bits are zero
+
+
+
+
+/* Below sequence can be used when we want to only bits too be reversed in byte 
+   Call the byte to be reverse as REVERSE_BIT8(i) */
+#define REVERSE_BIT2(num) ((((num) & 0x2) >> 1) | (((num) & 0x01) << 1))
+#define REVERSE_BIT4(num) (REVERSE_BIT2(((num) & 0x0C) >> 2) | (REVERSE_BIT2((num) & 0x03) << 2))
+#define REVERSE_BIT8(num) (REVERSE_BIT4(((num) & 0xF0) >> 4) | (REVERSE_BIT4((num) & 0x0F) << 4))
