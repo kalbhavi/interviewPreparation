@@ -39,6 +39,9 @@ http://www.geeksforgeeks.org/memory-layout-of-c-program/
 Data Structure alignment and padding
 https://en.wikipedia.org/wiki/Data_structure_alignment
 
+Hash Table Implementation
+http://algs4.cs.princeton.edu/34hash/
+
 
 Linux:
 
